@@ -58,6 +58,14 @@
     /* simple scroll reveal */
     [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
     [data-reveal].visible{opacity:1;transform:none}
+
+    /* inputs */
+    input, textarea{
+      width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
+      background:#0b1220; color:#e6edf3;
+    }
+    label{display:block; margin-bottom:10px; color:#cbd5e1}
+    .row{display:flex; gap:12px; flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -70,7 +78,10 @@
         </div>
         <div class="links">
           <a href="#tableau">Tableau</a>
+          <a href="#education">Education</a>
           <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf">Resume</a>
           <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a>
         </div>
@@ -86,9 +97,9 @@
         <p data-reveal>
           Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action
         </p>
-        <div>
+        <div class="row">
           <a class="btn" href="#tableau">View Tableau</a>
-          <a class="btn" href="mailto:samantha.cwz@gmail.com">Contact</a>
+          <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
     </section>
@@ -118,43 +129,78 @@
       </p>
     </section>
 
+   <!-- EDUCATION -->
+<section id="education" class="section">
+  <h2 data-reveal>Education</h2>
+  <div class="grid">
+    <div class="col-12 card" data-reveal>
+      <p>
+        <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br>
+        Master of Science in Business Analytics & Artificial Intelligence<br>
+        Anticipated Completion: December 2025
+      </p>
+      <p>
+        <strong>Oak Point University, Oak Park, IL</strong><br>
+        Bachelor of Science<br>
+        April 2024
+      </p>
+    </div>
+  </div>
+</section
+
     <!-- ABOUT -->
     <section id="about" class="section">
       <h2 data-reveal>About Me</h2>
       <div class="grid">
         <div class="col-12 card" data-reveal>
           <p>
-            Hi, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. I bring a unique blend of technical expertise and real-world experience, combining advanced analytics skills with a proven background in healthcare and business operations.
+            Hello, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. I’m on track to graduate in December 2025 with a Master of Science in Business Analytics & Artificial Intelligence from UTRGV. Through this program, I’ve gained expertise in Python, R, SQL, Tableau, Power BI, and machine learning through projects in predictive modeling, text mining, and dashboard design.
           </p>
           <p>
-            I am currently completing my Master of Science in Business Analytics & Artificial Intelligence at UTRGV (Dec 2025), where I’ve developed deep expertise in Python, R, SQL, Tableau, Power BI, and machine learning frameworks. My academic training is reinforced by hands-on projects in text mining, predictive modeling, and dashboard development.
+            My career spans healthcare, independent consulting, and business operations. As a Mammography and Radiologic Technologist, I thrived in high-stakes environments, improving workflows, creating KPIs, and protecting sensitive data. In analytics consulting roles, I’ve delivered measurable results, including driving 12% revenue growth, cutting cancellations by 25% ($5K monthly), and reducing reporting time by 30%.
           </p>
           <p>
-            Professionally, I’ve built a career that spans healthcare, independent analytics consulting, and business operations. As a Mammography and Radiologic Technologist, I thrived in high-stakes environments, leading process improvements, creating KPIs, and safeguarding sensitive data (HIPAA). In my roles, I’ve delivered results such as:
-          </p>
-          <ul>
-            <li>Driving 12% revenue growth through retention and scheduling efficiency insights</li>
-            <li>Cutting same-day cancellations by 25%, recovering about $5,000 in monthly revenue</li>
-            <li>Increasing exam throughput by 50% with KPI-driven workflow tracking</li>
-            <li>Reducing manual reporting time by 30% with automated reporting workflows</li>
-          </ul>
-          <p>
-            Core Skills & Tools:<br>
-            Data Analysis & Visualization: Python, R, Tableau, Power BI, Excel<br>
-            Machine Learning & AI: Predictive modeling, deep learning, NLP, text mining<br>
-            Database Management: SQL, relational data design, reporting<br>
-            Business Analytics: KPI development, operational insights, workflow optimization<br>
-            Healthcare Expertise: Process improvement, compliance, data security, patient-focused outcomes
-          </p>
-          <p>
-            I am passionate about using analytics to uncover opportunities, improve efficiency, and tell stories with data that leaders can act on. My goal is to leverage my technical training and healthcare background to create impact in business, product, and healthcare analytics, helping organizations make confident, data-informed decisions.
+            Core skills include data visualization, predictive modeling, SQL and database management, KPI development, workflow optimization, and healthcare process improvement. I’m passionate about uncovering opportunities in data, improving efficiency, and telling stories with insights that help organizations make smarter, data-driven decisions.
           </p>
           <p>
             Profiles:
             <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> ·
             <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> ·
-            <a href="mailto:samantha.cwz@gmail.com">Email Me</a>
+            <a href="assets/Samantha_Calkiewicz_Resume.pdf">Resume</a>
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 data-reveal>Contact</h2>
+      <div class="grid">
+        <div class="col-12 card" data-reveal>
+          <form action="https://formspree.io/f/mgvlqeky" method="POST">
+            <div class="row">
+              <label style="flex:1">
+                Name
+                <input type="text" name="name" required>
+              </label>
+              <label style="flex:1">
+                Email
+                <input type="email" name="_replyto" required>
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <input type="hidden" name="_subject" value="Portfolio inquiry from SamanthaCalkiewicz.github.io">
+            <div class="row" style="margin-top:10px">
+              <button class="btn" type="submit">Send</button>
+              <a class="btn" href="mailto:samantha.cwz@gmail.com">Email instead</a>
+            </div>
+            <p style="color:#9aa4b2; font-size:13px; margin-top:12px">
+              Form submissions are handled by Formspree.
+            </p>
+          </form>
         </div>
       </div>
     </section>
