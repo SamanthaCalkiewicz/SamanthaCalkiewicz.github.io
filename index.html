@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samantha Calkiewicz · Portfolio</title>
+  <meta name="description" content="Analytics & AI portfolio with projects and interactive Tableau dashboards." />
+  <meta name="author" content="Samantha Calkiewicz" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2; --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,15,22,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--brand));}
+    .links a{margin-left:16px;color:var(--fg);opacity:.85}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
+    .hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .section{padding:28px 0}
+    .section h2{font-size:24px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-4{grid-column:span 4}
+    .col-12{grid-column:span 12}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .col-4,.col-12{grid-column:1/-1}
+    }
+    .proj-card{display:flex;flex-direction:column;gap:10px}
+    .proj-thumb{aspect-ratio:16/9;border-radius:12px;background:#0b1220;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:#94a3b8;font-size:14px}
+    .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
+    .tableau-embed{position:relative; width:100%; padding-bottom:66%; height:0; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.08);}
+    .tableau-embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
+    footer{padding:40px 0;color:#94a3b8}
+    .kudos{font-size:12px;color:#64748b}
+    [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s}
+    [data-reveal].visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo"></div>
+          <span>Samantha Calkiewicz</span>
+        </div>
+        <div class="links">
+          <a href="#projects">Projects</a>
+          <a href="#tableau">Tableau</a>
+          <a href="#about">About</a>
+          <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 data-reveal>Analytics & AI Portfolio</h1>
+        <p data-reveal>MSBA-AI @ UTRGV · Python · R · SQL · Tableau · ML. I turn messy data into decisions and polished dashboards.</p>
+        <div>
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="#tableau">View Tableau</a>
+          <a class="btn" href="mailto:samantha.cwz@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div class="card" data-reveal>
+        <strong>Featured Project</strong>
+        <div class="proj-thumb">✨ Showcase image here</div>
+        <div class="proj-meta">
+          <span>Credit Card Fraud Detection</span>
+          <a href="https://github.com/SamanthaCalkiewicz" class="btn">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 data-reveal>Projects</h2>
+      <div class="grid">
+        <article class="col-4 card proj-card" data-reveal>
+          <div class="proj-thumb">Dashboard: Sales & Profit</div>
+          <div class="proj-meta"><strong>Tableau</strong><span>2025</span></div>
+          <p>Regional KPI dashboard, cohort retention, and anomaly callouts.</p>
+          <a class="btn" href="#tableau">View</a>
+        </article>
+        <article class="col-4 card proj-card" data-reveal>
+          <div class="proj-thumb">Text Mining: LDA Topics</div>
+          <div class="proj-meta"><strong>Python/R</strong><span>2025</span></div>
+          <p>Incident reports → LDA topic modeling; report with managerial insights.</p>
+          <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="tableau" class="section">
+      <h2 data-reveal>Tableau Dashboards</h2>
+      <div class="tableau-embed" data-reveal>
+        <iframe title="Avion Salon Overview" allowfullscreen
+          src="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes">
+        </iframe>
+      </div>
+      <div class="proj-meta"><span>Avion Salon Overview</span></div>
+
+      <div class="tableau-embed" data-reveal>
+        <iframe title="Shared Viz" allowfullscreen
+          src="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes">
+        </iframe>
+      </div>
+      <div class="proj-meta"><span>Shared Tableau Viz</span></div>
+
+      <p style="color:#9aa4b2">More dashboards can be added later by duplicating these blocks with new links.</p>
+    </section>
+
+    <section id="about" class="section">
+      <h2 data-reveal>About</h2>
+      <div class="grid">
+        <div class="col-12 card" data-reveal>
+          <p>Hi, I’m <strong>Samantha Calkiewicz</strong> — healthcare-savvy analyst turning data into decisions. I build clean pipelines, clear visuals, and concise narratives that help teams act. Currently finishing my MS in Business Analytics & AI at UTRGV (Dec 2025).</p>
+          <p><strong>Focus:</strong> Product & healthcare analytics, text mining, dashboards<br>
+             <strong>Tech:</strong> Python, R, SQL, Tableau, Power BI<br>
+             <strong>Profiles:</strong> <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> · <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="kudos">© <span id="year"></span> Samantha Calkiewicz · Built with ❤️ and GitHub Pages</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const revealEls = [...document.querySelectorAll('[data-reveal]')];
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+    }, {threshold:.08});
+    revealEls.forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
