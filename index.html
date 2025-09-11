@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samantha Calkiewicz · Portfolio</title>
-  <meta name="description" content="Analytics & AI portfolio with projects and interactive Tableau dashboards." />
+  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards." />
   <meta name="author" content="Samantha Calkiewicz" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2; --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
+      --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2;
+      --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
       --maxw:1100px;
     }
     *{box-sizing:border-box}
@@ -19,30 +21,42 @@
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,15,22,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+
+    header{position:sticky;top:0;background:rgba(11,15,22,.95);
+      backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
     nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--brand));}
+    .brand .logo{width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--brand));}
     .links a{margin-left:16px;color:var(--fg);opacity:.85}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
+
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
     .hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
     .hero p{color:var(--muted);margin:0 0 18px}
+
     .section{padding:28px 0}
     .section h2{font-size:24px;margin:0 0 12px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
     .col-12{grid-column:span 12}
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .col-12{grid-column:1/-1}
     }
-    .proj-thumb{aspect-ratio:16/9;border-radius:12px;background:#0b1220;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:#94a3b8;font-size:14px}
+
     .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
-    .tableau-embed{position:relative; width:100%; padding-bottom:66%; height:0; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.08);}
-    .tableau-embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
+    .tableau-embed{position:relative;width:100%;padding-bottom:66%;height:0;overflow:hidden;
+      border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+    .tableau-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
     footer{padding:40px 0;color:#94a3b8}
     .kudos{font-size:12px;color:#64748b}
-    [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s}
+
+    /* simple scroll reveal */
+    [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
     [data-reveal].visible{opacity:1;transform:none}
   </style>
 </head>
@@ -51,7 +65,7 @@
     <div class="container">
       <nav>
         <div class="brand">
-          <div class="logo"></div>
+          <div class="logo" aria-hidden="true"></div>
           <span>Samantha Calkiewicz</span>
         </div>
         <div class="links">
@@ -65,10 +79,13 @@
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="hero">
       <div>
         <h1 data-reveal>Analytics & AI Portfolio</h1>
-        <p data-reveal>Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action</p>
+        <p data-reveal>
+          Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action
+        </p>
         <div>
           <a class="btn" href="#tableau">View Tableau</a>
           <a class="btn" href="mailto:samantha.cwz@gmail.com">Contact</a>
@@ -76,8 +93,10 @@
       </div>
     </section>
 
+    <!-- TABLEAU -->
     <section id="tableau" class="section">
       <h2 data-reveal>Tableau Dashboards</h2>
+
       <div class="tableau-embed" data-reveal>
         <iframe title="Avion Salon Overview" allowfullscreen
           src="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes">
@@ -94,31 +113,46 @@
 
       <p>
         <a class="btn" href="https://public.tableau.com/app/profile/samantha.calkiewicz6487/vizzes" target="_blank">
-          View All Dashboards on Tableau Public
+          View all dashboards on Tableau Public
         </a>
       </p>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
       <h2 data-reveal>About Me</h2>
       <div class="grid">
         <div class="col-12 card" data-reveal>
           <p>
-            Hi, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. With hands-on experience across Python, R, SQL, and Tableau, I specialize in turning complex datasets into actionable insights that drive smarter decisions.
+            Hi, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. I bring a unique blend of technical expertise and real-world experience, combining advanced analytics skills with a proven background in healthcare and business operations.
           </p>
           <p>
-            I am currently completing my MS in Business Analytics and Artificial Intelligence at UTRGV, graduating in December 2025. Over the past five years, I built a career in healthcare ranging from X-ray to mammography, which shaped my ability to work with precision, manage high-stakes situations, and adapt to fast-paced environments. These experiences complement my technical skills and bring a unique perspective to my work in analytics.
+            I am currently completing my Master of Science in Business Analytics & Artificial Intelligence at UTRGV (Dec 2025), where I’ve developed deep expertise in Python, R, SQL, Tableau, Power BI, and machine learning frameworks. My academic training is reinforced by hands-on projects in text mining, predictive modeling, and dashboard development.
           </p>
           <p>
-            Core skills include data analysis and visualization (Python, R, Tableau, Power BI), machine learning and predictive modeling (scikit-learn, TensorFlow, PyTorch), text mining and natural language processing, SQL and database management, and building reports and dashboards that guide business decisions.
+            Professionally, I’ve built a career that spans healthcare, independent analytics consulting, and business operations. As a Mammography and Radiologic Technologist, I thrived in high-stakes environments, leading process improvements, creating KPIs, and safeguarding sensitive data (HIPAA). In my roles, I’ve delivered results such as:
+          </p>
+          <ul>
+            <li>Driving 12% revenue growth through retention and scheduling efficiency insights</li>
+            <li>Cutting same-day cancellations by 25%, recovering about $5,000 in monthly revenue</li>
+            <li>Increasing exam throughput by 50% with KPI-driven workflow tracking</li>
+            <li>Reducing manual reporting time by 30% with automated reporting workflows</li>
+          </ul>
+          <p>
+            Core Skills & Tools:<br>
+            Data Analysis & Visualization: Python, R, Tableau, Power BI, Excel<br>
+            Machine Learning & AI: Predictive modeling, deep learning, NLP, text mining<br>
+            Database Management: SQL, relational data design, reporting<br>
+            Business Analytics: KPI development, operational insights, workflow optimization<br>
+            Healthcare Expertise: Process improvement, compliance, data security, patient-focused outcomes
           </p>
           <p>
-            I am passionate about using analytics to uncover opportunities, improve efficiency, and tell stories with data that decision-makers can act on. My goal is to combine technical expertise with business knowledge to create real impact in healthcare, product, and business analytics.
+            I am passionate about using analytics to uncover opportunities, improve efficiency, and tell stories with data that leaders can act on. My goal is to leverage my technical training and healthcare background to create impact in business, product, and healthcare analytics, helping organizations make confident, data-informed decisions.
           </p>
           <p>
-            Profiles: 
-            <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> · 
-            <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> · 
+            Profiles:
+            <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> ·
             <a href="mailto:samantha.cwz@gmail.com">Email Me</a>
           </p>
         </div>
@@ -131,7 +165,9 @@
   </main>
 
   <script>
+    // year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
+    // simple scroll reveal
     const revealEls = [...document.querySelectorAll('[data-reveal]')];
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
