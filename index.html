@@ -31,13 +31,11 @@
     .section{padding:28px 0}
     .section h2{font-size:24px;margin:0 0 12px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-4{grid-column:span 4}
     .col-12{grid-column:span 12}
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
-      .col-4,.col-12{grid-column:1/-1}
+      .col-12{grid-column:1/-1}
     }
-    .proj-card{display:flex;flex-direction:column;gap:10px}
     .proj-thumb{aspect-ratio:16/9;border-radius:12px;background:#0b1220;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:#94a3b8;font-size:14px}
     .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
     .tableau-embed{position:relative; width:100%; padding-bottom:66%; height:0; overflow:hidden; border-radius:16px; border:1px solid rgba(255,255,255,.08);}
@@ -57,7 +55,6 @@
           <span>Samantha Calkiewicz</span>
         </div>
         <div class="links">
-          <a href="#projects">Projects</a>
           <a href="#tableau">Tableau</a>
           <a href="#about">About</a>
           <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
@@ -71,38 +68,11 @@
     <section class="hero">
       <div>
         <h1 data-reveal>Analytics & AI Portfolio</h1>
-        <p data-reveal>MSBA-AI @ UTRGV · Python · R · SQL · Tableau · ML. I turn messy data into decisions and polished dashboards.</p>
+        <p data-reveal>Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action</p>
         <div>
-          <a class="btn" href="#projects">See Projects</a>
           <a class="btn" href="#tableau">View Tableau</a>
           <a class="btn" href="mailto:samantha.cwz@gmail.com">Contact</a>
         </div>
-      </div>
-      <div class="card" data-reveal>
-        <strong>Featured Project</strong>
-        <div class="proj-thumb">✨ Showcase image here</div>
-        <div class="proj-meta">
-          <span>Credit Card Fraud Detection</span>
-          <a href="https://github.com/SamanthaCalkiewicz" class="btn">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <h2 data-reveal>Projects</h2>
-      <div class="grid">
-        <article class="col-4 card proj-card" data-reveal>
-          <div class="proj-thumb">Dashboard: Sales & Profit</div>
-          <div class="proj-meta"><strong>Tableau</strong><span>2025</span></div>
-          <p>Regional KPI dashboard, cohort retention, and anomaly callouts.</p>
-          <a class="btn" href="#tableau">View</a>
-        </article>
-        <article class="col-4 card proj-card" data-reveal>
-          <div class="proj-thumb">Text Mining: LDA Topics</div>
-          <div class="proj-meta"><strong>Python/R</strong><span>2025</span></div>
-          <p>Incident reports → LDA topic modeling; report with managerial insights.</p>
-          <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
-        </article>
       </div>
     </section>
 
@@ -122,17 +92,34 @@
       </div>
       <div class="proj-meta"><span>Shared Tableau Viz</span></div>
 
-      <p style="color:#9aa4b2">More dashboards can be added later by duplicating these blocks with new links.</p>
+      <p>
+        <a class="btn" href="https://public.tableau.com/app/profile/samantha.calkiewicz6487/vizzes" target="_blank">
+          View All Dashboards on Tableau Public
+        </a>
+      </p>
     </section>
 
     <section id="about" class="section">
-      <h2 data-reveal>About</h2>
+      <h2 data-reveal>About Me</h2>
       <div class="grid">
         <div class="col-12 card" data-reveal>
-          <p>Hi, I’m <strong>Samantha Calkiewicz</strong> — healthcare-savvy analyst turning data into decisions. I build clean pipelines, clear visuals, and concise narratives that help teams act. Currently finishing my MS in Business Analytics & AI at UTRGV (Dec 2025).</p>
-          <p><strong>Focus:</strong> Product & healthcare analytics, text mining, dashboards<br>
-             <strong>Tech:</strong> Python, R, SQL, Tableau, Power BI<br>
-             <strong>Profiles:</strong> <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> · <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a>
+          <p>
+            Hi, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. With hands-on experience across Python, R, SQL, and Tableau, I specialize in turning complex datasets into actionable insights that drive smarter decisions.
+          </p>
+          <p>
+            I am currently completing my MS in Business Analytics and Artificial Intelligence at UTRGV, graduating in December 2025. Over the past five years, I built a career in healthcare ranging from X-ray to mammography, which shaped my ability to work with precision, manage high-stakes situations, and adapt to fast-paced environments. These experiences complement my technical skills and bring a unique perspective to my work in analytics.
+          </p>
+          <p>
+            Core skills include data analysis and visualization (Python, R, Tableau, Power BI), machine learning and predictive modeling (scikit-learn, TensorFlow, PyTorch), text mining and natural language processing, SQL and database management, and building reports and dashboards that guide business decisions.
+          </p>
+          <p>
+            I am passionate about using analytics to uncover opportunities, improve efficiency, and tell stories with data that decision-makers can act on. My goal is to combine technical expertise with business knowledge to create real impact in healthcare, product, and business analytics.
+          </p>
+          <p>
+            Profiles: 
+            <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> · 
+            <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> · 
+            <a href="mailto:samantha.cwz@gmail.com">Email Me</a>
           </p>
         </div>
       </div>
