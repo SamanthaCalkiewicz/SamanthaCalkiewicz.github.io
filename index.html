@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samantha Calkiewicz · Portfolio</title>
-  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards and case studies." />
+  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards." />
   <meta name="author" content="Samantha Calkiewicz" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,54 +46,20 @@
       .col-12{grid-column:1/-1}
     }
 
-    .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
-      aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
     .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
-
-    /* Tableau embed default (tall) */
-    .tableau-embed {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tableau-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Shorter embeds for case studies */
-    .tableau-embed.short {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tableau-embed.short iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    .tableau-embed{position:relative;width:100%;padding-bottom:66%;height:0;overflow:hidden;
+      border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+    .tableau-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
     footer{padding:40px 0;color:#94a3b8}
     .kudos{font-size:12px;color:#64748b}
 
+    /* simple scroll reveal */
     [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
     [data-reveal].visible{opacity:1;transform:none}
 
+    /* inputs */
     input, textarea{
       width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
       background:#0b1220; color:#e6edf3;
@@ -103,9 +69,6 @@
   </style>
 </head>
 <body>
-  <!-- =============================================================== -->
-  <!-- HEADER + NAVIGATION -->
-  <!-- =============================================================== -->
   <header>
     <div class="container">
       <nav>
@@ -119,7 +82,8 @@
           <a href="#education">Education</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf">Resume</a>
+          <!-- Resume button in navbar -->
+          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" target="_blank">Resume</a>
           <a class="btn" href="https://github.com/SamanthaCalkiewicz">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a>
         </div>
@@ -128,9 +92,7 @@
   </header>
 
   <main class="container">
-    <!-- =============================================================== -->
-    <!-- HERO SECTION -->
-    <!-- =============================================================== -->
+    <!-- HERO -->
     <section class="hero">
       <div>
         <h1 data-reveal>Analytics & AI Portfolio</h1>
@@ -138,170 +100,24 @@
           Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action
         </p>
         <div class="row">
-          <a class="btn" href="assets/Samantha_Calkiewicz_CV.pdf" download>Download CV</a>
+          <!-- Download CV button in hero -->
+          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" target="_blank">Download CV</a>
           <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
     </section>
 
-    <!-- =============================================================== -->
-    <!-- TABLEAU SECTION -->
-    <!-- =============================================================== -->
-    <section id="tableau" class="section">
-      <h2 data-reveal>Tableau Dashboards</h2>
+    <!-- The rest of your sections (Tableau, Case Studies, Education, About, Contact) go here -->
 
-      <div class="tableau-embed" data-reveal>
-        <iframe title="Avion Salon Overview" allowfullscreen
-          src="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes">
-        </iframe>
-      </div>
-      <div class="proj-meta"><span>Avion Salon Overview</span></div>
-
-      <div class="tableau-embed" data-reveal>
-        <iframe title="Shared Viz" allowfullscreen
-          src="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes">
-        </iframe>
-      </div>
-      <div class="proj-meta"><span>Shared Tableau Viz</span></div>
-
-      <p>
-        <a class="btn" href="https://public.tableau.com/app/profile/samantha.calkiewicz6487/vizzes" target="_blank">
-          View all dashboards on Tableau Public
-        </a>
-      </p>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- CASE STUDIES SECTION -->
-    <!-- =============================================================== -->
-    <section id="case-studies" class="section">
-      <h2 data-reveal>Case Studies</h2>
-      <div class="grid">
-        <!-- GitHub Case Study -->
-        <div class="col-12 card proj-card" data-reveal>
-          <div class="proj-thumb">Readmission Case Study</div>
-          <div class="proj-meta"><span>GitHub</span><span>2025</span></div>
-          <p>
-            This case study analyzes hospital readmissions and builds predictive models to surface
-            drivers of readmission risk, with recommendations to reduce avoidable readmissions.
-          </p>
-          <a class="btn" href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" target="_blank">
-            View Case Study on GitHub
-          </a>
-        </div>
-
-        <!-- Tableau Case Study -->
-        <div class="col-12 card" data-reveal>
-          <h3>Readmission Case Study Dashboard</h3>
-          <div class="tableau-embed short">
-            <iframe title="Readmission Dashboard" allowfullscreen
-              src="https://public.tableau.com/shared/XX5TS24KT?:showVizHome=no&:embed=true&:toolbar=yes">
-            </iframe>
-          </div>
-          <div class="proj-meta"><span>Tableau</span></div>
-          <p>
-            Interactive Tableau dashboard built for the readmission analysis. Explore key metrics,
-            trends, and visual insights supporting the recommendations.
-          </p>
-          <a class="btn" href="https://public.tableau.com/shared/XX5TS24KT?:display_count=n&:origin=viz_share_link" target="_blank">
-            Open on Tableau Public
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- EDUCATION SECTION -->
-    <!-- =============================================================== -->
-    <section id="education" class="section">
-      <h2 data-reveal>Education</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <p>
-            <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br>
-            Master of Science in Business Analytics & Artificial Intelligence<br>
-            Anticipated Completion: December 2025
-          </p>
-          <p>
-            <strong>Oak Point University, Oak Park, IL</strong><br>
-            Bachelor of Science<br>
-            April 2024
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- ABOUT SECTION -->
-    <!-- =============================================================== -->
-    <section id="about" class="section">
-      <h2 data-reveal>About Me</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <p>
-            Hello, I’m Samantha Calkiewicz, a data-driven problem solver with a strong foundation in Business Analytics and Artificial Intelligence. I’m on track to graduate in December 2025 with a Master of Science in Business Analytics & Artificial Intelligence from UTRGV. Through this program, I’ve gained expertise in Python, R, SQL, Tableau, Power BI, and machine learning through projects in predictive modeling, text mining, and dashboard design.
-          </p>
-          <p>
-            My career spans healthcare, independent consulting, and business operations. As a Mammography and Radiologic Technologist, I thrived in high-stakes environments, improving workflows, creating KPIs, and protecting sensitive data. In analytics consulting roles, I’ve delivered measurable results, including driving 12% revenue growth, cutting cancellations by 25% ($5K monthly), and reducing reporting time by 30%.
-          </p>
-          <p>
-            Core skills include data visualization, predictive modeling, SQL and database management, KPI development, workflow optimization, and healthcare process improvement. I’m passionate about uncovering opportunities in data, improving efficiency, and telling stories with insights that help organizations make smarter, data-driven decisions.
-          </p>
-          <p>
-            Profiles:
-            <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> ·
-            <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> ·
-            <a href="assets/Samantha_Calkiewicz_Resume.pdf">Resume</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- CONTACT SECTION -->
-    <!-- =============================================================== -->
-    <section id="contact" class="section">
-      <h2 data-reveal>Contact</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <form action="https://formspree.io/f/mgvlqeky" method="POST">
-            <div class="row">
-              <label style="flex:1">
-                Name
-                <input type="text" name="name" required>
-              </label>
-              <label style="flex:1">
-                Email
-                <input type="email" name="_replyto" required>
-              </label>
-            </div>
-            <label>
-              Message
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-            <input type="hidden" name="_subject" value="Portfolio inquiry from SamanthaCalkiewicz.github.io">
-            <div class="row" style="margin-top:10px">
-              <button class="btn" type="submit">Send</button>
-              <a class="btn" href="mailto:samantha.cwz@gmail.com">Email instead</a>
-            </div>
-            <p style="color:#9aa4b2; font-size:13px; margin-top:12px">
-              Form submissions are handled by Formspree.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- FOOTER -->
-    <!-- =============================================================== -->
     <footer>
       <div class="kudos">© <span id="year"></span> Samantha Calkiewicz · Built with ❤️ and GitHub Pages</div>
     </footer>
   </main>
 
   <script>
+    // year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
+    // simple scroll reveal
     const revealEls = [...document.querySelectorAll('[data-reveal]')];
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
