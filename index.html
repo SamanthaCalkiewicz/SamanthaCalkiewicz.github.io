@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samantha Calkiewicz · Portfolio</title>
-  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards." />
+  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards and case studies." />
   <meta name="author" content="Samantha Calkiewicz" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +46,8 @@
       .col-12{grid-column:1/-1}
     }
 
+    .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
+      aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
     .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
     .tableau-embed{position:relative;width:100%;padding-bottom:66%;height:0;overflow:hidden;
       border-radius:16px;border:1px solid rgba(255,255,255,.08)}
@@ -55,11 +57,9 @@
     footer{padding:40px 0;color:#94a3b8}
     .kudos{font-size:12px;color:#64748b}
 
-    /* simple scroll reveal */
     [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
     [data-reveal].visible{opacity:1;transform:none}
 
-    /* inputs */
     input, textarea{
       width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
       background:#0b1220; color:#e6edf3;
@@ -69,6 +69,9 @@
   </style>
 </head>
 <body>
+  <!-- =============================================================== -->
+  <!-- HEADER + NAVIGATION -->
+  <!-- =============================================================== -->
   <header>
     <div class="container">
       <nav>
@@ -78,6 +81,7 @@
         </div>
         <div class="links">
           <a href="#tableau">Tableau</a>
+          <a href="#case-studies">Case Studies</a>
           <a href="#education">Education</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -90,7 +94,9 @@
   </header>
 
   <main class="container">
-    <!-- HERO -->
+    <!-- =============================================================== -->
+    <!-- HERO SECTION -->
+    <!-- =============================================================== -->
     <section class="hero">
       <div>
         <h1 data-reveal>Analytics & AI Portfolio</h1>
@@ -104,7 +110,9 @@
       </div>
     </section>
 
-    <!-- TABLEAU -->
+    <!-- =============================================================== -->
+    <!-- TABLEAU SECTION -->
+    <!-- =============================================================== -->
     <section id="tableau" class="section">
       <h2 data-reveal>Tableau Dashboards</h2>
 
@@ -129,26 +137,50 @@
       </p>
     </section>
 
-   <!-- EDUCATION -->
-<section id="education" class="section">
-  <h2 data-reveal>Education</h2>
-  <div class="grid">
-    <div class="col-12 card" data-reveal>
-      <p>
-        <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br>
-        Master of Science in Business Analytics & Artificial Intelligence<br>
-        Anticipated Completion: December 2025
-      </p>
-      <p>
-        <strong>Oak Point University, Oak Park, IL</strong><br>
-        Bachelor of Science<br>
-        April 2024
-      </p>
-    </div>
-  </div>
-</section
+    <!-- =============================================================== -->
+    <!-- CASE STUDIES SECTION -->
+    <!-- =============================================================== -->
+    <section id="case-studies" class="section">
+      <h2 data-reveal>Case Studies</h2>
+      <div class="grid">
+        <div class="col-12 card proj-card" data-reveal>
+          <div class="proj-thumb">Readmission Case Study</div>
+          <div class="proj-meta"><span>GitHub</span><span>2025</span></div>
+          <p>
+            This case study analyzes hospital readmissions and builds predictive models to surface
+            drivers of readmission risk, with recommendations to reduce avoidable readmissions.
+          </p>
+          <a class="btn" href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" target="_blank">
+            View Case Study
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <!-- ABOUT -->
+    <!-- =============================================================== -->
+    <!-- EDUCATION SECTION -->
+    <!-- =============================================================== -->
+    <section id="education" class="section">
+      <h2 data-reveal>Education</h2>
+      <div class="grid">
+        <div class="col-12 card" data-reveal>
+          <p>
+            <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br>
+            Master of Science in Business Analytics & Artificial Intelligence<br>
+            Anticipated Completion: December 2025
+          </p>
+          <p>
+            <strong>Oak Point University, Oak Park, IL</strong><br>
+            Bachelor of Science<br>
+            April 2024
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- ABOUT SECTION -->
+    <!-- =============================================================== -->
     <section id="about" class="section">
       <h2 data-reveal>About Me</h2>
       <div class="grid">
@@ -172,7 +204,9 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- =============================================================== -->
+    <!-- CONTACT SECTION -->
+    <!-- =============================================================== -->
     <section id="contact" class="section">
       <h2 data-reveal>Contact</h2>
       <div class="grid">
@@ -205,15 +239,16 @@
       </div>
     </section>
 
+    <!-- =============================================================== -->
+    <!-- FOOTER -->
+    <!-- =============================================================== -->
     <footer>
       <div class="kudos">© <span id="year"></span> Samantha Calkiewicz · Built with ❤️ and GitHub Pages</div>
     </footer>
   </main>
 
   <script>
-    // year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
-    // simple scroll reveal
     const revealEls = [...document.querySelectorAll('[data-reveal]')];
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
