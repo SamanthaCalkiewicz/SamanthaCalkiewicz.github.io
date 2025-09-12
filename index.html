@@ -49,9 +49,43 @@
     .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
       aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
     .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px}
-    .tableau-embed{position:relative;width:100%;padding-bottom:66%;height:0;overflow:hidden;
-      border-radius:16px;border:1px solid rgba(255,255,255,.08)}
-    .tableau-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    /* Tableau embed default (tall) */
+    .tableau-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 66%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .tableau-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Shorter embeds for case studies */
+    .tableau-embed.short {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .tableau-embed.short iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
     footer{padding:40px 0;color:#94a3b8}
@@ -104,7 +138,7 @@
           Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action
         </p>
         <div class="row">
-          <a class="btn" href="#tableau">View Tableau</a>
+          <a class="btn" href="assets/Samantha_Calkiewicz_CV.pdf" download>Download CV</a>
           <a class="btn" href="#contact">Contact</a>
         </div>
       </div>
@@ -128,7 +162,7 @@
           src="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes">
         </iframe>
       </div>
-      <div class="proj-meta"><span>Pro Prevent Overview</span></div>
+      <div class="proj-meta"><span>Shared Tableau Viz</span></div>
 
       <p>
         <a class="btn" href="https://public.tableau.com/app/profile/samantha.calkiewicz6487/vizzes" target="_blank">
@@ -140,42 +174,41 @@
     <!-- =============================================================== -->
     <!-- CASE STUDIES SECTION -->
     <!-- =============================================================== -->
-<section id="case-studies" class="section">
-  <h2 data-reveal>Case Studies</h2>
+    <section id="case-studies" class="section">
+      <h2 data-reveal>Case Studies</h2>
+      <div class="grid">
+        <!-- GitHub Case Study -->
+        <div class="col-12 card proj-card" data-reveal>
+          <div class="proj-thumb">Readmission Case Study</div>
+          <div class="proj-meta"><span>GitHub</span><span>2025</span></div>
+          <p>
+            This case study analyzes hospital readmissions and builds predictive models to surface
+            drivers of readmission risk, with recommendations to reduce avoidable readmissions.
+          </p>
+          <a class="btn" href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" target="_blank">
+            View Case Study on GitHub
+          </a>
+        </div>
 
-  <div class="grid">
-    <!-- GitHub Case Study -->
-    <div class="col-12 card proj-card" data-reveal>
-      <div class="proj-thumb">Readmission Case Study</div>
-      <div class="proj-meta"><span>GitHub</span><span>2025</span></div>
-      <p>
-        This case study analyzes hospital readmissions and builds predictive models to surface
-        drivers of readmission risk, with recommendations to reduce avoidable readmissions.
-      </p>
-      <a class="btn" href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" target="_blank">
-        View Case Study on GitHub
-      </a>
-    </div>
-
-    <!-- Tableau Case Study -->
-    <div class="col-12 card" data-reveal>
-      <h3>Readmission Case Study Dashboard</h3>
-      <div class="tableau-embed">
-        <iframe title="Readmission Dashboard" allowfullscreen
-          src="https://public.tableau.com/shared/XX5TS24KT?:showVizHome=no&:embed=true&:toolbar=yes">
-        </iframe>
+        <!-- Tableau Case Study -->
+        <div class="col-12 card" data-reveal>
+          <h3>Readmission Case Study Dashboard</h3>
+          <div class="tableau-embed short">
+            <iframe title="Readmission Dashboard" allowfullscreen
+              src="https://public.tableau.com/shared/XX5TS24KT?:showVizHome=no&:embed=true&:toolbar=yes">
+            </iframe>
+          </div>
+          <div class="proj-meta"><span>Tableau</span></div>
+          <p>
+            Interactive Tableau dashboard built for the readmission analysis. Explore key metrics,
+            trends, and visual insights supporting the recommendations.
+          </p>
+          <a class="btn" href="https://public.tableau.com/shared/XX5TS24KT?:display_count=n&:origin=viz_share_link" target="_blank">
+            Open on Tableau Public
+          </a>
+        </div>
       </div>
-      <div class="proj-meta"><span>Tableau</span></div>
-      <p>
-        Interactive Tableau dashboard built for the readmission analysis. Explore key metrics,
-        trends, and visual insights supporting the recommendations.
-      </p>
-      <a class="btn" href="https://public.tableau.com/shared/XX5TS24KT?:display_count=n&:origin=viz_share_link" target="_blank">
-        Open on Tableau Public
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- =============================================================== -->
     <!-- EDUCATION SECTION -->
