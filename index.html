@@ -1,360 +1,335 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samantha Calkiewicz · Portfolio</title>
-  <meta name="description" content="Analytics & AI portfolio with interactive Tableau dashboards and case studies." />
-  <meta name="author" content="Samantha Calkiewicz" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE HTML>
+<!--
+  Solid State by HTML5 UP (html5up.net | @ajlkn)
+  Adapted for Samantha Calkiewicz · Portfolio
+-->
+<html>
+  <head>
+    <title>Samantha Calkiewicz · Analytics & AI Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Analytics & AI portfolio featuring Tableau, Power BI, and case studies by Samantha Calkiewicz." />
+    <meta name="author" content="Samantha Calkiewicz" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
 
-  <style>
-    :root{
-      --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2;
-      --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    <!-- Page Wrapper -->
+      <div id="page-wrapper">
 
-    header{position:sticky;top:0;background:rgba(11,15,22,.95);
-      backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand .logo{width:36px;height:36px;border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--brand));}
-    .links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .links::-webkit-scrollbar{display:none}
-    .links a{margin-left:0;color:var(--fg);opacity:.85;flex:0 0 auto}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
+        <!-- Header -->
+          <header id="header" class="alt">
+            <h1><a href="index.html">Samantha Calkiewicz</a></h1>
+            <nav>
+              <a href="#menu">Menu</a>
+            </nav>
+          </header>
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
-    .hero h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0 0 12px}
-    .hero p{color:var(--muted);margin:0 0 18px}
+        <!-- Menu -->
+          <nav id="menu">
+            <div class="inner">
+              <h2>Menu</h2>
+              <ul class="links">
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="assets/Samantha_Calkiewicz_Resume.pdf" download>Download Resume</a></li>
+                <li><a href="https://github.com/SamanthaCalkiewicz" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn</a></li>
+              </ul>
+              <a href="#" class="close">Close</a>
+            </div>
+          </nav>
 
-    .section{padding:28px 0}
-    .section h2{font-size:clamp(20px,3.8vw,24px);margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-12{grid-column:span 12}
+        <!-- Banner (Hero) -->
+          <section id="banner">
+            <div class="inner">
+              <div class="logo"><span class="icon fa-gem"></span></div>
+              <h2>Analytics & AI Portfolio</h2>
+              <p>
+                Business Analytics & AI professional · M.S. in Business Analytics & Artificial Intelligence (UTRGV) ·
+                Python · R · SQL · Tableau · Power BI · Machine Learning
+              </p>
+              <ul class="actions">
+                <li><a href="assets/Samantha_Calkiewicz_Resume.pdf" class="button primary" download>Download Resume</a></li>
+                <li><a href="#footer" class="button">Contact Me</a></li>
+              </ul>
+            </div>
+          </section>
 
-    /* Prevent sticky header from covering anchors on jump */
-    section{scroll-margin-top:80px}
+        <!-- Wrapper -->
+          <section id="wrapper">
 
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .col-12{grid-column:1/-1}
-    }
+            <!-- Projects / Dashboards -->
+              <section id="projects" class="wrapper spotlight style1">
+                <div class="inner">
+                  <a href="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes" target="_blank" class="image">
+                    <!-- Tableau embed can live inside image container -->
+                    <span class="image fit">
+                      <iframe
+                        title="Avion Salon Overview"
+                        src="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes"
+                        style="border:0; width:100%; height:320px;"
+                        allowfullscreen>
+                      </iframe>
+                    </span>
+                  </a>
+                  <div class="content">
+                    <h2 class="major">Avion Salon &amp; Spa Analytics Dashboard (Tableau)</h2>
+                    <p>
+                      Centralized dashboard tracking revenue, service mix, booking patterns, and client retention for
+                      A’vion Salon &amp; Spa. Supports decision-making around staffing, pricing, and marketing campaigns.
+                    </p>
+                    <p>
+                      Key features: revenue by service category, client visit frequency, peak booking times, and trend
+                      analysis to improve scheduling and utilization.
+                    </p>
+                    <a href="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes" class="special" target="_blank">
+                      Open on Tableau Public
+                    </a>
+                  </div>
+                </div>
+              </section>
 
-    @media (max-width:700px){
-      .container{padding:16px}
-      .hero{padding:36px 0;gap:20px}
-      .btn{padding:12px 14px}
-    }
-
-    .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
-      aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
-    .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px;gap:8px;flex-wrap:wrap}
-
-    /* Tableau embed default (tall) */
-    .tableau-embed {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tableau-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Shorter embeds for case studies */
-    .tableau-embed.short {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tableau-embed.short iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Make short embeds fit small screens better */
-    @media (max-width:600px){
-      .tableau-embed.short{height:min(65vh,420px)}
-    }
-
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
-    footer{padding:40px 0;color:#94a3b8}
-    .kudos{font-size:12px;color:#64748b}
-
-    [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
-    [data-reveal].visible{opacity:1;transform:none}
-
-    input, textarea{
-      width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
-      background:#0b1220; color:#e6edf3;
-    }
-    label{display:block; margin-bottom:10px; color:#cbd5e1}
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-  </style>
-</head>
-<body>
-  <!-- =============================================================== -->
-  <!-- HEADER + NAVIGATION -->
-  <!-- =============================================================== -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <span>Samantha Calkiewicz</span>
-        </div>
-        <div class="links">
-          <a href="#tableau">Tableau</a>
-          <a href="#case-studies">Case Studies</a>
-          <a href="#education">Education</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-              <!-- Resume button in navbar (forced download) -->
-          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" download>Resume</a>
-          <a class="btn" href="https://github.com/SamanthaCalkiewicz" target="_blank">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- =============================================================== -->
-    <!-- HERO SECTION -->
-    <!-- =============================================================== -->
-<section class="hero">
-      <div>
-        <h1 data-reveal>Analytics & AI Portfolio</h1>
-        <p data-reveal>
-          Graduate student in Business Analytics & AI at UTRGV · Proficient in Python, R, SQL, Tableau, and ML · Transforming raw data into strategies, insights, and visuals that drive action
-        </p>
-        <div class="row">
-          <!-- Download CV button in hero (forced download) -->
-          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" download>Download CV</a>
-          <a class="btn" href="#contact">Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- TABLEAU SECTION -->
-    <!-- =============================================================== -->
-    <section id="tableau" class="section">
-      <h2 data-reveal>Tableau Dashboards</h2>
-
-      <div class="tableau-embed" data-reveal>
-        <iframe title="Avion Salon Overview" allowfullscreen
-          src="https://public.tableau.com/views/AvionSalon/Overview?:showVizHome=no&:embed=true&:toolbar=yes">
-        </iframe>
-      </div>
-      <div class="proj-meta"><span>Avion Salon Overview</span></div>
-
-      <div class="tableau-embed" data-reveal>
-        <iframe title="Pro Prevent" allowfullscreen
-          src="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes">
-        </iframe>
-      </div>
-      <div class="proj-meta"><span>Pro Prevent</span></div>
-
-      <p>
-        <a class="btn" href="https://public.tableau.com/app/profile/samantha.calkiewicz6487/vizzes" target="_blank">
-          View all dashboards on Tableau Public
-        </a>
-      </p>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- POWER BI Section -->
-    <!-- =============================================================== -->
-    <section id="powerbi" class="section">
-      <h2 data-reveal>Power BI Dashboard</h2>
-
-      <div class="tableau-embed" data-reveal>
+            <!-- Pro Prevent -->
+<section id="proprevent" class="wrapper alt spotlight style2">
+  <div class="inner">
+    <a href="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes" target="_blank" class="image">
+      <span class="image fit">
         <iframe
-          title="ReadmissionCaseStudy"
-          src="https://app.powerbi.com/reportEmbed?reportId=6afb71b8-3d84-4ddf-bef8-c41667d615a0&autoAuth=true&ctid=990436a6-87df-491c-9124-9afa91f88827"
-          frameborder="0"
-          allowfullscreen="true">
+          title="Pro Prevent"
+          src="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes"
+          style="border:0; width:100%; height:320px;"
+          allowfullscreen>
         </iframe>
-      </div>
-
-      <div class="proj-meta"><span>Power BI</span></div>
-
+      </span>
+    </a>
+    <div class="content">
+      <h2 class="major">Pro Prevent Operations Dashboard (Tableau)</h2>
       <p>
-        <a class="btn" href="https://app.powerbi.com/reportEmbed?reportId=6afb71b8-3d84-4ddf-bef8-c41667d615a0&autoAuth=true&ctid=990436a6-87df-491c-9124-9afa91f88827" target="_blank">
-          View all dashboards on Power BI
-        </a>
-      </p>
-    </section>
-    
-    <!-- =============================================================== -->
-    <!-- CASE STUDIES SECTION -->
-    <!-- =============================================================== -->
-    <section id="case-studies" class="section">
-      <h2 data-reveal>Case Studies</h2>
-      <div class="grid">
-        <!-- GitHub Case Study -->
-        <div class="col-12 card proj-card" data-reveal>
-          <div class="proj-thumb">Readmission Case Study</div>
-          <div class="proj-meta"><span>GitHub</span><span>2025</span></div>
-          <p>
-            This case study analyzes hospital readmissions and builds predictive models to surface
-            drivers of readmission risk, with recommendations to reduce avoidable readmissions.
-          </p>
-          <a class="btn" href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" target="_blank">
-            View Case Study on GitHub
-          </a>
-        </div>
-
-        <!-- Tableau Case Study -->
-        <div class="col-12 card" data-reveal>
-          <h3>Readmission Case Study Dashboard</h3>
-          <div class="tableau-embed short">
-            <iframe title="Readmission Dashboard" allowfullscreen
-              src="https://public.tableau.com/shared/XX5TS24KT?:showVizHome=no&:embed=true&:toolbar=yes">
-            </iframe>
-          </div>
-          <div class="proj-meta"><span>Tableau</span></div>
-          <p>
-            Interactive Tableau dashboard built for the readmission analysis. Explore key metrics,
-            trends, and visual insights supporting the recommendations.
-          </p>
-          <a class="btn" href="https://public.tableau.com/shared/XX5TS24KT?:display_count=n&:origin=viz_share_link" target="_blank">
-            Open on Tableau Public
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- EDUCATION SECTION -->
-    <!-- =============================================================== -->
-    <section id="education" class="section">
-      <h2 data-reveal>Education</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <p>
-            <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br>
-            Master of Science in Business Analytics & Artificial Intelligence<br>
-            December 2025
-          </p>
-          <p>
-            <strong>Oak Point University, Oak Park, IL</strong><br>
-            Bachelor of Science<br>
-            April 2024
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================================================== -->
-    <!-- ABOUT SECTION -->
-    <!-- =============================================================== -->
-    <section id="about" class="section">
-      <h2 data-reveal>About Me</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <p>
-             Hello, I’m Samantha Calkiewicz, a Business Analytics and AI professional. I hold a Master of Science in Business Analytics and Artificial Intelligence from the University of Texas Rio Grande Valley and a Bachelor of Science from Oak Point University. My work focuses on turning data into clear, actionable insights for operations, finance, and patient care.
-          </p>
-          <p>
-            Currently, I work as an Administrative & Operations Support at Pro Prevent LLC, building centralized systems and automated dashboards that enhance workflow efficiency, improve data accuracy, and support faster operational decisions.
-          </p>
-          <p>
-        Prior to transitioning into analytics, I worked as a Mammography Technologist at Advocate Aurora Good Shepherd Hospital, where I managed data-sensitive diagnostic workflows using Epic, PenRad, and PACS. I increased daily exam throughput and ensured full HIPAA compliance across thousands of patient records.
+        Dashboard supporting day-to-day operations at Pro Prevent LLC. Built to track revenue and service
+        patterns and give leadership a clear view of how the business is performing over time.
       </p>
       <p>
-        My foundation in business operations comes from leading the digital transformation of A’vion Salon & Spa; implementing POS, scheduling, and financial systems that improved client satisfaction and financial performance.
+        Highlights: revenue by service type, week-over-week trends, and high-level KPIs that help with staffing,
+        planning, and prioritizing services.
       </p>
-      <p>
-        Technical skill areas include: Python (pandas, NumPy, scikit-learn), R, SQL, Tableau, Power BI, Excel (PivotTables, Solver), AWS, Hive, Spark, and HIPAA-compliant data governance. I specialize in KPI development, dashboard automation, workflow optimization, forecasting, and classification modeling.
-      </p>
-      <p>
-            Profiles:
-            <a href="https://github.com/SamanthaCalkiewicz">GitHub</a> ·
-            <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351">LinkedIn</a> ·
-            <a href="assets/Samantha_Calkiewicz_Resume.pdf">Resume</a>
-          </p>
-        </div>
-      </div>
-    </section>
+      <a href="https://public.tableau.com/shared/4PKHH2QM3?:showVizHome=no&:embed=true&:toolbar=yes" class="special" target="_blank">
+        Open on Tableau Public
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- =============================================================== -->
-    <!-- CONTACT SECTION -->
-    <!-- =============================================================== -->
-    <section id="contact" class="section">
-      <h2 data-reveal>Contact</h2>
-      <div class="grid">
-        <div class="col-12 card" data-reveal>
-          <form action="https://formspree.io/f/mgvlqeky" method="POST">
-            <div class="row">
-              <label style="flex:1">
-                Name
-                <input type="text" name="name" required>
-              </label>
-              <label style="flex:1">
-                Email
-                <input type="email" name="_replyto" required>
-              </label>
+            <!-- Readmission Case Study (Power BI + Tableau + GitHub) -->
+              <section id="readmission" class="wrapper spotlight style3">
+                <div class="inner">
+                  <a href="https://app.powerbi.com/reportEmbed?reportId=6afb71b8-3d84-4ddf-bef8-c41667d615a0&autoAuth=true&ctid=990436a6-87df-491c-9124-9afa91f88827" target="_blank" class="image">
+                    <span class="image fit">
+                      <iframe
+                        title="ReadmissionCaseStudy (Power BI)"
+                        src="https://app.powerbi.com/reportEmbed?reportId=6afb71b8-3d84-4ddf-bef8-c41667d615a0&autoAuth=true&ctid=990436a6-87df-491c-9124-9afa91f88827"
+                        style="border:0; width:100%; height:320px;"
+                        allowfullscreen>
+                      </iframe>
+                    </span>
+                  </a>
+                  <div class="content">
+                    <h2 class="major">Hospital Readmission Case Study</h2>
+                    <p>
+                      End-to-end case study analyzing hospital readmissions and building predictive models to surface
+                      drivers of readmission risk. Includes feature engineering, model comparison, and performance
+                      evaluation.
+                    </p>
+                    <p>
+                      Deliverables: a detailed analytical report on GitHub, an interactive Power BI dashboard, and a
+                      complementary Tableau dashboard summarizing key metrics and high-risk profiles.
+                    </p>
+                    <ul class="actions">
+                      <li>
+                        <a href="https://github.com/SamanthaCalkiewicz/ReadmissionCaseStudy" class="button primary" target="_blank">
+                          View Case Study on GitHub
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://public.tableau.com/shared/XX5TS24KT?:showVizHome=no&:embed=true&:toolbar=yes" class="button" target="_blank">
+                          Readmission Dashboard (Tableau)
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+            <!-- Skills & Tools / Summary Section -->
+              <section id="four" class="wrapper alt style1">
+                <div class="inner">
+                  <h2 class="major">Skills & Focus Areas</h2>
+                  <p>
+                    I specialize in combining analytics, operations, and healthcare experience to design dashboards,
+                    automate reporting, and build models that support real decisions—not just pretty visuals.
+                  </p>
+                  <section class="features">
+                    <article>
+                      <h3 class="major">Business Intelligence</h3>
+                      <p>
+                        Tableau, Power BI, and Excel dashboards with KPI design, drill-down views, and self-service
+                        reporting for leadership and frontline staff.
+                      </p>
+                    </article>
+                    <article>
+                      <h3 class="major">Data &amp; Modeling</h3>
+                      <p>
+                        Python (pandas, NumPy, scikit-learn), R, and SQL for data cleaning, feature engineering,
+                        forecasting, and classification modeling.
+                      </p>
+                    </article>
+                    <article>
+                      <h3 class="major">Operations &amp; Workflow</h3>
+                      <p>
+                        Inventory tracking, workflow optimization, and process standardization across POS, scheduling,
+                        and clinical systems to reduce friction and errors.
+                      </p>
+                    </article>
+                    <article>
+                      <h3 class="major">Healthcare &amp; Compliance</h3>
+                      <p>
+                        Experience with Epic, PenRad, PACS, and HIPAA-compliant data governance from prior work as a
+                        Mammography Technologist in a hospital setting.
+                      </p>
+                    </article>
+                  </section>
+                </div>
+              </section>
+
+          </section> <!-- /#wrapper -->
+
+        <!-- Education Section -->
+          <section id="education" class="wrapper">
+            <div class="inner">
+              <h2 class="major">Education</h2>
+              <p>
+                <strong>University of Texas Rio Grande Valley (UTRGV), Edinburg, TX</strong><br />
+                Master of Science in Business Analytics &amp; Artificial Intelligence<br />
+                <em>Completed December 2025</em>
+              </p>
+              <p>
+                <strong>Oak Point University, Oak Park, IL</strong><br />
+                Bachelor of Science<br />
+                <em>Completed April 2024</em>
+              </p>
             </div>
-            <label>
-              Message
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-            <input type="hidden" name="_subject" value="Portfolio inquiry from SamanthaCalkiewicz.github.io">
-            <div class="row" style="margin-top:10px">
-              <button class="btn" type="submit">Send</button>
-              <a class="btn" href="mailto:samantha.cwz@gmail.com">Email instead</a>
+          </section>
+
+        <!-- About Section -->
+          <section id="about" class="wrapper alt style2">
+            <div class="inner">
+              <h2 class="major">About Me</h2>
+              <p>
+                Hello, I’m <strong>Samantha Calkiewicz</strong>, a Business Analytics and AI professional with a
+                background that bridges healthcare, operations, and data.
+              </p>
+              <p>
+                I hold a Master of Science in Business Analytics and Artificial Intelligence from the University of
+                Texas Rio Grande Valley and a Bachelor of Science from Oak Point University. My work focuses on turning
+                data into clear, actionable insights for operations, finance, and patient care.
+              </p>
+              <p>
+                Currently, I work in Administrative &amp; Operations support at Pro Prevent LLC, where I build
+                centralized systems, inventory tracking, and automated dashboards that enhance workflow efficiency,
+                improve data accuracy, and support faster operational decisions.
+              </p>
+              <p>
+                Prior to transitioning into analytics, I worked as a Mammography Technologist at Advocate Aurora Good
+                Shepherd Hospital, managing data-sensitive diagnostic workflows using Epic, PenRad, and PACS. I helped
+                increase daily exam throughput while maintaining strict HIPAA compliance across thousands of patient
+                records.
+              </p>
+              <p>
+                My foundation in business operations also comes from leading the digital transformation of A’vion Salon
+                &amp; Spa—implementing POS, scheduling, and financial systems that improved client satisfaction and
+                financial performance.
+              </p>
+              <p>
+                Technical skill areas include: Python (pandas, NumPy, scikit-learn), R, SQL, Tableau, Power BI,
+                Excel (PivotTables, Solver), AWS, Hive, Spark, and HIPAA-compliant data governance. I specialize in
+                KPI development, dashboard automation, workflow optimization, forecasting, and classification modeling.
+              </p>
+              <p>
+                Profiles:
+                <a href="https://github.com/SamanthaCalkiewicz" target="_blank">GitHub</a> ·
+                <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn</a> ·
+                <a href="assets/Samantha_Calkiewicz_Resume.pdf" download>Resume</a>
+              </p>
             </div>
-            <p style="color:#9aa4b2; font-size:13px; margin-top:12px">
-              Form submissions are handled by Formspree.
-            </p>
-          </form>
-        </div>
+          </section>
+
+        <!-- Footer / Contact -->
+          <section id="footer">
+            <div class="inner">
+              <h2 class="major">Get in touch</h2>
+              <p>
+                Interested in collaborating, hiring for an analytics or data role, or just want to talk dashboards and
+                models? Reach out using the form below or email me directly.
+              </p>
+              <form method="post" action="https://formspree.io/f/mgvlqeky">
+                <div class="fields">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" name="_replyto" id="email" required />
+                  </div>
+                  <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="4" required></textarea>
+                  </div>
+                </div>
+                <!-- Optional subject for Formspree -->
+                <input type="hidden" name="_subject" value="Portfolio inquiry from SamanthaCalkiewicz.github.io" />
+                <ul class="actions">
+                  <li><input type="submit" value="Send Message" class="primary" /></li>
+                  <li><a href="mailto:samantha.cwz@gmail.com" class="button">Email instead</a></li>
+                </ul>
+              </form>
+              <ul class="contact">
+                <li class="icon solid fa-home">
+                  Based in Illinois · Open to hybrid roles in IL and remote roles across the U.S.
+                </li>
+                <li class="icon solid fa-envelope">
+                  <a href="mailto:samantha.cwz@gmail.com">samantha.cwz@gmail.com</a>
+                </li>
+                <li class="icon brands fa-github">
+                  <a href="https://github.com/SamanthaCalkiewicz" target="_blank">github.com/SamanthaCalkiewicz</a>
+                </li>
+                <li class="icon brands fa-linkedin">
+                  <a href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn Profile</a>
+                </li>
+              </ul>
+              <ul class="copyright">
+                <li>&copy; <span id="year"></span> Samantha Calkiewicz. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP (Solid State)</a></li>
+              </ul>
+            </div>
+          </section>
+
       </div>
-    </section>
 
-    <!-- =============================================================== -->
-    <!-- FOOTER -->
-    <!-- =============================================================== -->
-    <footer>
-      <div class="kudos">© <span id="year"></span> Samantha Calkiewicz · Built with ❤️ and GitHub Pages</div>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const revealEls = [...document.querySelectorAll('[data-reveal]')];
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-    }, {threshold:.08});
-    revealEls.forEach(el=>io.observe(el));
-  </script>
-</body>
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script>
+        // Dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+  </body>
 </html>
