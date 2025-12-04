@@ -10,139 +10,222 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2;
-      --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
-      --maxw:1100px;
+<style>
+  /* Hamburger button */
+  .menu-toggle{
+    display:none;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    border-radius:6px;
+  }
+
+  .menu-toggle .line{
+    display:block;
+    width:24px;
+    height:2px;
+    background:var(--fg);
+    border-radius:999px;
+    transition:transform .28s ease, opacity .28s ease;
+  }
+
+  .menu-toggle .line + .line{
+    margin-top:6px;
+  }
+
+  /* Three-line to X animation */
+  .menu-toggle.open .line1{
+    transform:translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.open .line2{
+    opacity:0;
+  }
+  .menu-toggle.open .line3{
+    transform:translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile nav dropdown */
+  @media (max-width:800px){
+    .links{
+      position:absolute;
+      top:60px;
+      right:16px;
+      background:#111827;
+      padding:16px;
+      border-radius:14px;
+      flex-direction:column;
+      align-items:flex-start;
+      display:none;
+      box-shadow:0 20px 48px rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.10);
+      z-index:100;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-
-    header{position:sticky;top:0;background:rgba(11,15,22,.95);
-      backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand .logo{width:36px;height:36px;border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--brand));}
-    .links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .links::-webkit-scrollbar{display:none}
-    .links a{margin-left:0;color:var(--fg);opacity:.85;flex:0 0 auto}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
-
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
-    .hero h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0 0 12px}
-    .hero p{color:var(--muted);margin:0 0 18px}
-
-    .section{padding:28px 0}
-    .section h2{font-size:clamp(20px,3.8vw,24px);margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-12{grid-column:span 12}
-
-    /* Prevent sticky header from covering anchors on jump */
-    section{scroll-margin-top:80px}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .col-12{grid-column:1/-1}
+    .links a{
+      width:100%;
+      padding:8px 0;
     }
-
-    @media (max-width:700px){
-      .container{padding:16px}
-      .hero{padding:36px 0;gap:20px}
-      .btn{padding:12px 14px}
-    }
-
-    .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
-      aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
-    .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px;gap:8px;flex-wrap:wrap}
-
-    /* Tableau embed default (tall) */
-    .tableau-embed {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tableau-embed iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .links.open{
+      display:flex;
     }
 
-    /* Shorter embeds for case studies */
+    .menu-toggle{
+      display:inline-flex;
+      z-index:110;
+    }
+  }
+
+  :root{
+    --bg:#0b0f16; --fg:#e6edf3; --muted:#9aa4b2;
+    --brand:#6ee7ff; --card:#111827; --accent:#a78bfa;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+  header{position:sticky;top:0;background:rgba(11,15,22,.95);
+    backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+  .brand .logo{width:36px;height:36px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent),var(--brand));}
+  .links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .links::-webkit-scrollbar{display:none}
+  .links a{margin-left:0;color:var(--fg);opacity:.85;flex:0 0 auto}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);color:var(--fg)}
+
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:60px 0}
+  .hero h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0 0 12px}
+  .hero p{color:var(--muted);margin:0 0 18px}
+
+  .section{padding:28px 0}
+  .section h2{font-size:clamp(20px,3.8vw,24px);margin:0 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .col-12{grid-column:span 12}
+
+  /* Prevent sticky header from covering anchors on jump */
+  section{scroll-margin-top:80px}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .col-12{grid-column:1/-1}
+  }
+
+  @media (max-width:700px){
+    .container{padding:16px}
+    .hero{padding:36px 0;gap:20px}
+    .btn{padding:12px 14px}
+  }
+
+  .proj-thumb{background:#0b1220;border:1px solid rgba(255,255,255,.08);border-radius:12px;
+    aspect-ratio:16/9;display:grid;place-items:center;color:#94a3b8;font-size:14px}
+  .proj-meta{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:13px;gap:8px;flex-wrap:wrap}
+
+  /* Tableau embed default (smaller width + shorter height) */
+  .tableau-embed {
+    position: relative;
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 45%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .tableau-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Case study embeds (even smaller width + shorter height) */
+  .tableau-embed.short {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .tableau-embed.short iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width:600px){
+    .tableau-embed,
     .tableau-embed.short {
-      position: relative;
       width: 100%;
-      height: 400px;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
+      max-width: none;
     }
-    .tableau-embed.short iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .tableau-embed.short{
+      height:min(50vh,300px);
     }
+  }
 
-    /* Make short embeds fit small screens better */
-    @media (max-width:600px){
-      .tableau-embed.short{height:min(65vh,420px)}
-    }
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+  footer{padding:40px 0;color:#94a3b8}
+  .kudos{font-size:12px;color:#64748b}
 
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
-    footer{padding:40px 0;color:#94a3b8}
-    .kudos{font-size:12px;color:#64748b}
+  [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
+  [data-reveal].visible{opacity:1;transform:none}
 
-    [data-reveal]{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
-    [data-reveal].visible{opacity:1;transform:none}
-
-    input, textarea{
-      width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
-      background:#0b1220; color:#e6edf3;
-    }
-    label{display:block; margin-bottom:10px; color:#cbd5e1}
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-  </style>
+  input, textarea{
+    width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
+    background:#0b1220; color:#e6edf3;
+  }
+  label{display:block; margin-bottom:10px; color:#cbd5e1}
+  .row{display:flex; gap:12px; flex-wrap:wrap}
+</style>
 </head>
 <body>
   <!-- =============================================================== -->
   <!-- HEADER + NAVIGATION -->
   <!-- =============================================================== -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <span>Samantha Calkiewicz</span>
-        </div>
-        <div class="links">
-          <a href="#tableau">Tableau</a>
-          <a href="#case-studies">Case Studies</a>
-          <a href="#education">Education</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <!-- Resume button in navbar (forced download) -->
-          <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" download>Resume</a>
-          <a class="btn" href="https://github.com/SamanthaCalkiewicz" target="_blank">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Samantha Calkiewicz</span>
+      </div>
+
+      <!-- Hamburger toggle button -->
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </button>
+
+      <!-- Navigation links -->
+      <div class="links">
+        <a href="#tableau">Tableau</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#education">Education</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="assets/Samantha_Calkiewicz_Resume.pdf" download>Resume</a>
+        <a class="btn" href="https://github.com/SamanthaCalkiewicz" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/samantha-calkiewicz-64b553351" target="_blank">LinkedIn</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <main class="container">
     <!-- =============================================================== -->
@@ -346,14 +429,6 @@
             <input type="hidden" name="_subject" value="Portfolio inquiry from SamanthaCalkiewicz.github.io">
             <div class="row" style="margin-top:10px">
   <button class="btn" type="submit">Send</button>
-  <button
-    class="btn"
-    type="button"
-    onclick="window.location.href='mailto:Samcalkiewicz@gmail.com?subject=Portfolio%20Inquiry';">
-    Email instead
-  </button>
-</div>
-
             <p style="color:#9aa4b2; font-size:13px; margin-top:12px">
               Form submissions are handled by Formspree.
             </p>
@@ -370,13 +445,40 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const revealEls = [...document.querySelectorAll('[data-reveal]')];
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-    }, {threshold:.08});
-    revealEls.forEach(el=>io.observe(el));
-  </script>
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal-on-scroll
+  const revealEls = [...document.querySelectorAll('[data-reveal]')];
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.08});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Mobile hamburger menu
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.links');
+
+  if (menuToggle && navLinks){
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+
+    // Close menu after clicking a link
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>
